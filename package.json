@@ -1,0 +1,80 @@
+{
+  "name": "erc777",
+  "version": "0.1.1",
+  "description": "A New Advanced Token Standard",
+  "keywords": [
+    "ERC20",
+    "ERC777",
+    "Token",
+    "Standard",
+    "Solidity",
+    "Ethereum"
+  ],
+  "main": "js/ReferenceToken.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint:sol": "solium --reporter pretty --dir contracts",
+    "lint:js": "eslint --max-warnings 0 --format eslint-formatter-stylish-verbose test migrations truffle-config.js",
+    "lint": "npm run lint:sol && npm run lint:js",
+    "build:sol": "truffle compile",
+    "build": "npm run clean && truffle compile --all",
+    "test": "scripts/test.sh --network 'test'",
+    "coverage": "SOLIDITY_COVERAGE=true scripts/test.sh",
+    "check": "npm run lint && npm run build && npm run test",
+    "clean": "rm -rf ./build ./coverage ./coverage.json"
+  },
+  "files": [
+    "build",
+    "contracts",
+    "logo"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xjac/ERC777.git"
+  },
+  "contributors": [
+    {
+      "name": "Jordi Baylina",
+      "url": "https://github.com/jbaylina"
+    },
+    {
+      "name": "Jacques Dafflon",
+      "url": "https://github.com/0xjac"
+    },
+    {
+      "name": "Thomas Shababi",
+      "url": "https://github.com/tshabs"
+    }
+  ],
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/0xjac/ERC777/issues"
+  },
+  "homepage": "https://github.com/0xjac/ERC777#readme",
+  "dependencies": {
+    "erc1820": "0.0.2",
+    "openzeppelin-solidity": "2.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-formatter-pretty": "^1.3.0",
+    "eslint-formatter-stylish-verbose": "0.0.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "ganache-cli": "6.1.0",
+    "mocha": "^4.1.0",
+    "sha3": "^1.2.1",
+    "solidity-coverage": "^0.5.5",
+    "solium": "^1.1.8",
+    "truffle": "5.0.7",
+    "web3": "1.0.0-beta.34"
+  }
+}
